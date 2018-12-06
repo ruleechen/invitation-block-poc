@@ -1,0 +1,21 @@
+.rc-phone {
+    position: absolute;
+    border: 1px solid orange;
+    background-color: #cccccc;
+    padding: 20px;
+    right: 100px;
+    top: 100px;
+    width: 200px;
+    height: 300px;
+    z-index: 10000;
+}
+
+.rc-message {
+    position: absolute;
+    bottom: 20px;
+    color: #000000;
+}
+
+.rc-timestamp {
+    color: #666666;
+}
