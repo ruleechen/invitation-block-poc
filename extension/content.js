@@ -18,15 +18,16 @@ function insertBefore(el, html) {
 
 const phoneHtml = `
 <div class="rc-phone">
-    <button class="rc-schedule-invitation">Schedule Invitation</button>
-    <br><br>
-    <button class="rc-clean-invitation">Clean Invitation</button>
-    <div class="rc-message"></div>
+    <div class="rc-message">
+    </div>
+    <div class="rc-actions">
+      <button class="rc-schedule-invitation">Schedule Invitation</button>
+    </div>
 </div>
 `;
 
 const meetingInvitation = `
-<div aria-label="ringcentral-invitation" dir="1234567" style="border:1px solid #aaaaaa;padding:0;background:#eeeeee;width:600px">
+<div aria-label="ringcentral-invitation" dir="1234567" style="border:1px solid #aaaaaa;padding:0;margin:5px 0 0 0;background:#eeeeee;width:600px">
     <div aria-label="ringcentral-invitation-header" style="background:orange;padding:2px 10px;">RingCentral Invitation</div>
     <div aria-label="ringcentral-invitation-content" style="padding:10px">
         <p>Rulee is inviting you to a RingCentral meeting.</p>
@@ -89,13 +90,6 @@ function initPOC() {
     });
   }
 
-  const btnCleanInvitation = document.querySelector('.rc-clean-invitation');
-  if (btnCleanInvitation) {
-    btnCleanInvitation.addEventListener('click', () => {
-      cleanInvitationBlocks();
-    });
-  }
-
   function injectRemoveInvitationButton() {
     let removeBtn = document.querySelector('.rc-remove-invitation');
     if (!removeBtn) {
@@ -131,8 +125,8 @@ function initPOC() {
   });
 
   let mouseMoveTimeoutId;
-  const throttlingTime = 256;
-  const removeCloseDelay = 256;
+  const throttlingTime = 128;
+  const removeCloseDelay = 128;
   function detectCloseButton(ev) {
     clearTimeout(mouseMoveTimeoutId);
     mouseMoveTimeoutId = setTimeout(() => {

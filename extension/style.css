@@ -11,9 +11,13 @@
 }
 
 .rc-message {
+  color: #000000;
+}
+
+.rc-actions {
   position: absolute;
   bottom: 20px;
-  color: #000000;
+  text-align: center;
 }
 
 .rc-timestamp {
